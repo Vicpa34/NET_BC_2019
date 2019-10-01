@@ -39,14 +39,15 @@ namespace Exceptions
 
             try
             {
-                int result = int.Parse(input);
-                return result;
+              //  int result = int.Parse(input);
+                //return result;
             }
             catch (Exception)
             {
                 Console.WriteLine("Invalid number");
                 GetNumber(text);  //recursion - call out function where we are
             }
+            return result;
         }
     }
 }
