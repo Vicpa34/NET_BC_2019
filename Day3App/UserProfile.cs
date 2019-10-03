@@ -8,26 +8,33 @@ namespace Day3App
 {
     class UserProfile
     {
-        string FullName;
-        enum Gender
+        public string Name;
+        public enum Genders
         {
             m,
             f
         }
-        DateTime birthDate;
 
-        public static int GetAge(DateTime birthDate)
+        public DateTime date { get; set; }
+
+        public Genders Gender { get; set; }
+
+        public int GetAge()
         {
-            DateTime n = DateTime.Now; // To avoid a race condition around midnight
-            int age = n.Year - birthDate.Year;
+            DateTime n = DateTime.Now; 
+            int age = n.Year - date.Year;
 
-            if (n.Month < birthDate.Month || (n.Month == birthDate.Month && n.Day < birthDate.Day))
+            if (n.Month < date.Month || (n.Month == date.Month && n.Day < date.Day))
                 age--;
 
             return age;
         }
-         
 
-        
+        public UserProfile(string name, DateTime date, Genders gender)
+        {
+            Name = name;
+            this.date = date;
+            Gender = gender;
+        }
     }
 }
