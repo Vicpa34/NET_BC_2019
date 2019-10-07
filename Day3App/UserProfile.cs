@@ -8,13 +8,13 @@ namespace Day3App
 {
     class UserProfile
     {
-        public string Name;
+        
         public enum Genders
         {
             m,
             f
         }
-
+        public string Name { get; set; }
         public DateTime date { get; set; }
 
         public Genders Gender { get; set; }

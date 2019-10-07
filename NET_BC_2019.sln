@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3App", "Day3App\Day3App.csproj", "{C156C18E-8FE7-4D23-9D65-59F79D6A96A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAY4_Abstraction", "DAY4_Abstraction\DAY4_Abstraction.csproj", "{9E614242-812C-40E5-AF88-8D824967279E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C156C18E-8FE7-4D23-9D65-59F79D6A96A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C156C18E-8FE7-4D23-9D65-59F79D6A96A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C156C18E-8FE7-4D23-9D65-59F79D6A96A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E614242-812C-40E5-AF88-8D824967279E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E614242-812C-40E5-AF88-8D824967279E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E614242-812C-40E5-AF88-8D824967279E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E614242-812C-40E5-AF88-8D824967279E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

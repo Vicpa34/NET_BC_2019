@@ -16,8 +16,11 @@ namespace Day3App
             while (true)
             {
                 //1.1 Input name
+                string name = GetText();
                 //1.2 Input date (DateTime.TryParse)
+                DateTime birthDate = GetDate();
                 //1.3 Input gender (Enum.TryParse)
+                UserProfile.Genders gender = GetGender();
 
                 //2. Izsauc lietotaja pievienosanu ar vertibam augstak
                 list.Add();
@@ -47,24 +50,40 @@ namespace Day3App
         public static UserProfile.Genders GetGender()
         {
             Console.Write("Enter your Gender: ");
-            string input = Console.ReadLine();
+            string value = Console.ReadLine();
 
-            if (UserProfile.Genders.TryParse(input, out UserProfile.Genders gender))
-            {
+            if (UserProfile.Genders.TryParse(value, out UserProfile.Genders gender))  //or  if (Enum.TryParse(value, true, out UserProfile.Genders gender))
+            {                                                                         // true - ignoring entered BIG SMALL letters  
                 return gender;
             }
             else
             {
-                Console.WriteLine("Invalid gender");
+                Console.WriteLine("Incorrect value");
                 return GetGender();
             }
 
 
         }
+        public static string GetText()     //checking name if there are empty spaces
+        {
+            Console.Write("Enter  name: ");
+            string name = Console.ReadLine();
+            name = name.Trim();                // trimming - taking out blank spaces
 
-
-
-               
+            if (!String.IsNullOrEmpty(name)) 
+            {
+                return name;
+            }
+            else
+            {
+                Console.WriteLine("Empty text!");
+                return GetText();
+            }
         }
+
+
+
+
+    }
     }
 }

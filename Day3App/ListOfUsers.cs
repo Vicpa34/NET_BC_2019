@@ -14,14 +14,34 @@ namespace Day3App
         {
             //parbaudes
             //1. Date cannot be in the future
+            if ()
+            {
+                throw new UserListExceptions(" ");
+            }
             //2. Date cant be less than 01.01.1800
+            if ()
+            {
+                throw new UserListExceptions(" ");
+            }
             //3. Full name cannot exceed 20 symbols
+            if ()
+            {
+                throw new UserListExceptions(" ");
+            }
 
             //
-            UserProfile user = new UserProfile(fullName, gender, date);
+            UserProfile user = new UserProfile(fullName, date, gender);
             users.Add(user);
 
         }
+        public void DateTimeCheck(string DateTime)
+        {
+            
+            if (DateTime > DateTime.Today)
+            { 
+            }
+        }
 
+        public void NameCheck(string n)
     }
 }
