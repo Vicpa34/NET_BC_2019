@@ -14,19 +14,21 @@ namespace Day3App
         {
             //parbaudes
             //1. Date cannot be in the future
-            if ()
+            if (date > DateTime.Now)
             {
-                throw new UserListExceptions(" ");
+                throw new UserListExceptions("Entered date is invalid!");
             }
-            //2. Date cant be less than 01.01.1800
-            if ()
+            //2. Date cant be less than 01.01.1900
+            DateTime date2 = new DateTime(1900, 1, 1, 0, 0, 0);
+            if (date < date2 )
             {
-                throw new UserListExceptions(" ");
+                throw new UserListExceptions("Entered date is less than 01.01.1900!");
             }
             //3. Full name cannot exceed 20 symbols
-            if ()
+            int length = fullName.Length;
+            if (length > 20)
             {
-                throw new UserListExceptions(" ");
+                throw new UserListExceptions("Your name exceed 20 symbols!");
             }
 
             //
@@ -34,14 +36,6 @@ namespace Day3App
             users.Add(user);
 
         }
-        public void DateTimeCheck(string DateTime)
-        {
-            
-            if (DateTime > DateTime.Today)
-            { 
-            }
-        }
-
-        public void NameCheck(string n)
+        
     }
 }

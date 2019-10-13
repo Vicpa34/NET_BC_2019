@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAY4_Abstraction
+namespace BlackJack
 {
-    interface IPlayer
+    class Program
     {
-        int GuessNumber();
+        static void Main(string[] args)
+        {
+        }
     }
 }
