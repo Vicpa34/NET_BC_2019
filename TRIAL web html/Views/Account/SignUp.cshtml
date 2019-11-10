@@ -1,0 +1,34 @@
+﻿@model UserModel
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<h2>Pieslēgties</h2>
+
+@Html.ValidationSummary()
+
+<form action="SignUp" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <div class="col-sm-10">
+            <input asp-for="Email" class="form-control" id="exampleInputEmail1" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <div class="col-sm-10">
+            <input asp-for="Password" class="form-control" id="exampleInputEmail1" placeholder="Password" />
+        </div>
+    </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">RepeatPassword</label>
+                <div class="col-sm-10">
+                    <input name="passwordRepeat" type="password" class="form-control" id="exampleInputPassword1" placeholder="RepeatPassword">
+                </div>
+            </div>
+
+
+                <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+

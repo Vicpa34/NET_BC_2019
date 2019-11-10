@@ -1,0 +1,28 @@
+﻿
+
+@model List<TRIALLogic.Sludinajums>
+@{
+    ViewData["Title"] = "Kategorija";
+}
+
+<h2>Kategorijas nosaukums</h2>
+
+@*@foreach (var category in Model.FindAll(c => c.CategoryId)*@
+
+<h2>Kategorijas nosaukums</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th style="width: 20%">Attēls</th>
+        <th>Apraksts</th>
+        <th style="width: 20%">Cena</th>
+    </tr>
+    @foreach (var sludinajums in Model)
+    {
+        <tr>
+            <td><img src="@sludinajums.Photo" class="img-rounded img-responsive" /></td>
+            <td><a asp-controller="Sludinajums" asp-action="View" asp-route-id="@sludinajums.Id">@sludinajums.Description</a></td>
+            <td>@String.Format("EUR {0:0.00}", sludinajums.Price)</td>
+        </tr>
+    }
+</table>

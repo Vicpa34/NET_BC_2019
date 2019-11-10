@@ -43,6 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdsPortal\Controllers\AdController.cs" />
+    <Compile Include="AdsPortal\Controllers\CategoryController.cs" />
+    <Compile Include="AdsPortal\Controllers\UserController.cs" />
+    <Compile Include="AdsPortal\CookiePolicyOptions.cs" />
+    <Compile Include="AdsPortal\Extensions\SessionExtensions.cs" />
+    <Compile Include="AdsPortal\IConfiguration.cs" />
+    <Compile Include="AdsPortal\IServiceCollection.cs" />
+    <Compile Include="AdsPortal\Models\SignUpModel.cs" />
+    <Compile Include="AdsPortal\Models\UserModel.cs" />
+    <Compile Include="AdsPortal\obj\Debug\netcoreapp2.1\AdsPortal.AssemblyInfo.cs" />
+    <Compile Include="AdsPortal\obj\Release\netcoreapp2.1\AdsPortal.AssemblyInfo.cs" />
+    <Compile Include="AdsPortal\Program.cs" />
+    <Compile Include="AdsPortal\Startup.cs" />
     <Compile Include="BasePlayer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Iplayer.cs" />
@@ -52,6 +65,42 @@
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AdsPortal\.vs\AdsPortal\v16\.suo" />
+    <None Include="AdsPortal\.vs\AdsPortal\v16\TestStore\0\000-0000.testlog" />
+    <None Include="AdsPortal\.vs\AdsPortal\v16\TestStore\0\testlog.manifest" />
+    <None Include="AdsPortal\.vs\slnx.sqlite" />
+    <None Include="AdsPortal\.vs\VSWorkspaceState.json" />
+    <None Include="AdsPortal\appsettings.Development.json" />
+    <None Include="AdsPortal\appsettings.json" />
+    <None Include="AdsPortal\obj\Debug\netcoreapp2.1\AdsPortal.AssemblyInfoInputs.cache" />
+    <None Include="AdsPortal\obj\Release\netcoreapp2.1\AdsPortal.AssemblyInfoInputs.cache" />
+    <None Include="AdsPortal\Properties\launchSettings.json" />
+    <None Include="AdsPortal\Views\Ad\Create.cshtml" />
+    <None Include="AdsPortal\Views\Ad\Index.cshtml" />
+    <None Include="AdsPortal\Views\Ad\View.cshtml" />
+    <None Include="AdsPortal\Views\Category\Index.cshtml" />
+    <None Include="AdsPortal\Views\Shared\_CookieConsentPartial.cshtml" />
+    <None Include="AdsPortal\Views\Shared\_Layout.cshtml" />
+    <None Include="AdsPortal\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="AdsPortal\Views\User\SignIn.cshtml" />
+    <None Include="AdsPortal\Views\User\SignUp.cshtml" />
+    <None Include="AdsPortal\Views\_ViewImports.cshtml" />
+    <None Include="AdsPortal\Views\_ViewStart.cshtml" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\.bower.json" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="AdsPortal\wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="AdsPortal\wwwroot\lib\jquery-validation-unobtrusive\.bower.json" />
+    <None Include="AdsPortal\wwwroot\lib\jquery-validation\.bower.json" />
+    <None Include="AdsPortal\wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="AdsPortal\wwwroot\lib\jquery\.bower.json" />
+    <None Include="AdsPortal\wwwroot\lib\jquery\dist\jquery.min.map" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +108,39 @@
       <Project>{f2007374-aaf3-42d7-be67-a50b05c6c811}</Project>
       <Name>ConsoleHelpers</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdsPortal\AdsPortal.csproj" />
+    <Content Include="AdsPortal\wwwroot\css\site.css" />
+    <Content Include="AdsPortal\wwwroot\css\site.min.css" />
+    <Content Include="AdsPortal\wwwroot\favicon.ico" />
+    <Content Include="AdsPortal\wwwroot\images\banner1.svg" />
+    <Content Include="AdsPortal\wwwroot\images\banner2.svg" />
+    <Content Include="AdsPortal\wwwroot\images\banner3.svg" />
+    <Content Include="AdsPortal\wwwroot\js\site.js" />
+    <Content Include="AdsPortal\wwwroot\js\site.min.js" />
+    <Content Include="AdsPortal\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="AdsPortal\wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="AdsPortal\wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="AdsPortal\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="AdsPortal\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AdsPortal\wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="AdsPortal\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="AdsPortal\wwwroot\lib\bootstrap\dist\js\npm.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery\dist\jquery.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery\dist\jquery.min.js" />
+    <Content Include="AdsPortal\wwwroot\lib\jquery\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdsPortal\bin\Debug\netcoreapp2.1\" />
+    <Folder Include="AdsPortal\bin\Release\netcoreapp2.1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

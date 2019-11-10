@@ -1,0 +1,57 @@
+﻿@model CatalogModel
+@{
+    ViewData["Title"] = "Items";
+}
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">@TempData["message"]</div>
+}
+
+<div class="row">
+    <div class="col-sm-4">
+        @foreach (var category in Model.Categories.FindAll(c => !c.CategoryId.HasValue))
+        {
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    @category.Title
+                </a>
+                @foreach (var subcategory in Model.Categories.FindAll(c => c.CategoryId == category.Id))
+                {
+                    <a class="list-group-item"
+                       asp-controller="Item"
+                       asp-action="Index"
+                       asp-route-id="@subcategory.Id">
+                        @subcategory.Title <span class="badge">@subcategory.ItemCount</span>
+                    </a>
+                }
+            </div>
+        }
+    </div>
+    <div class="col-sm-8">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li class="active">Mobile</li>
+        </ol>
+        <div>
+            <div class="row">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="@item.Photo" />
+                            <div class="caption text-center">
+                                <h3>@item.Title</h3>
+                                <p>Price: <span>$@item.Price</span></p>
+                                <p>
+                                    <a asp-controller="Item" asp-action="Buy" asp-route-id="@item.Id" class="btn btn-primary" role="button">Add to cart</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

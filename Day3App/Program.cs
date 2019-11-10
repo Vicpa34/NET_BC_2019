@@ -1,77 +1,93 @@
-﻿using System;
+﻿using ConsoleHelpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day3App
+namespace DAY3_ERRHNDL
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            try 
-                { 
-                UserList list = new UserList();  // 
+            UserList list = new UserList();
+            list.Add("asdasd", UserProfile.Genders.Female, DateTime.Now);
+            list.Add("34dsdasd", UserProfile.Genders.Female, DateTime.Now);
 
-            
-                //1. Cyclically asks to add a user
+            UserList list2 = new UserList();
+            list2.Add("dadsasdsad", UserProfile.Genders.Female, DateTime.Now);
+            list2.Add("sadrggfg", UserProfile.Genders.Female, DateTime.Now);
+
+
+
+
+
+
+
+
+
+
+
+            try
+            {
+                UserList list = new UserList();
+
+                // 1. cikliski vaicā pievienot lietotājus
                 while (true)
                 {
                     try
-                    { 
-                    //1.1 Input name
-                    string name = ConsoleInput.GetText();
-                    //1.2 Input date (DateTime.TryParse)
-                    DateTime birthDate = ConsoleInput.GetDate();
-                    //1.3 Input gender (Enum.TryParse)
-                    UserProfile.Genders gender = GetGender();
+                    {
+                        // 1.1. Ievada vārdu
+                        string name = ConsoleInput.GetText("Enter name: ");
+                        // 1.2. Ievada datumu (DateTime.TryParse)
+                        DateTime birthDate = ConsoleInput.GetDate("Enter birth date: ");
+                        // 1.3. Ievada dzimumu (Enum.TryParse)
+                        UserProfile.Genders gender = GetGender();
 
-                    //2. Izsauc lietotaja pievienosanu ar vertibam augstak
-                    list.Add(name, gender, birthDate);
-                        //3. Ja neizdevas pievienot attelo kludas pazinojumu
-                        //un sak 1. soli no jauna
+                        // 2. Izsauc lietotāja pievienošanu ar vērtībām augstāk
+                        list.Add(name, gender, birthDate);
+                        // 3. Ja neizdevās pievienot, attēlo kļūdas paziņojumu 
+                        //    un sāk 1. soli no jauna
 
-                        Console.WriteLine("Add another? (y/n)");
+                        Console.Write("Add another? (y/n)");
                         string input = Console.ReadLine().ToLower();
-                        if(input == "n")
+                        if (input == "n")
                         {
                             break;
                         }
-
+                    }
+                    catch (InputException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
                 }
-
-            catch (InputException ex)
+            }
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("Unexpected error! {0}", ex.Message);
             }
 
-            }
-                                 
+            Console.Read();
         }
 
-            
 
 
-            public static UserProfile.Genders GetGender()
+        public static UserProfile.Genders GetGender()
+        {
+            Console.Write("Enter gender: ");
+            string value = Console.ReadLine();
+
+            if (Enum.TryParse(value, true, out UserProfile.Genders gender))
             {
-                Console.Write("Enter your Gender: ");
-                string value = Console.ReadLine();
-
-                if (UserProfile.Genders.TryParse(value, out UserProfile.Genders gender))  //or  if (Enum.TryParse(value, true, out UserProfile.Genders gender))
-                {                                                                         // true - ignoring entered BIG SMALL letters  
-                    return gender;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect value");
-                    return GetGender();
-                }
+                return gender;
             }
-
-
-
-
+            else
+            {
+                Console.WriteLine("Incorrect value!");
+                return GetGender();
+            }
         }
     }
 }

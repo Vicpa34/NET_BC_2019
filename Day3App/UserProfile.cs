@@ -4,37 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day3App
+namespace DAY3_ERRHNDL
 {
     class UserProfile
     {
-        
         public enum Genders
         {
-            m,
-            f
+            Male,
+            Female
         }
-        public string Name { get; set; }
-        public DateTime date { get; set; }
+
+        public string FullName { get; set; }
+
+        public DateTime BirthDate { get; set; }
 
         public Genders Gender { get; set; }
 
-        public int GetAge()
+        public UserProfile(string fullName, DateTime birthDate, Genders gender)
         {
-            DateTime n = DateTime.Now; 
-            int age = n.Year - date.Year;
-
-            if (n.Month < date.Month || (n.Month == date.Month && n.Day < date.Day))
-                age--;
-
-            return age;
+            FullName = fullName;
+            BirthDate = birthDate;
+            Gender = gender;
         }
 
-        public UserProfile(string name, DateTime date, Genders gender)
+        public int Age()
         {
-            Name = name;
-            this.date = date;
-            Gender = gender;
+            // calculate age using BirthDate
+            // Save today's date.
+            var today = DateTime.Today;
+            // Calculate the age.
+            var age = today.Year - BirthDate.Year;
+            // Go back to the year the person was born in case of a leap year
+            if (BirthDate.Date > today.AddYears(-age))
+            {
+                age--;
+            }
+
+            return age;
         }
     }
 }
