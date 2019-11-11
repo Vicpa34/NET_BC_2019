@@ -20,13 +20,13 @@ namespace NewsPortalLogic
             }
         }
 
-        News = new List<News>();
-        public List<News> GetAll()
-        {
+        //News = new List<News>();
+        //public List<News> GetAll()
+        //{
                       
-             return (News);
+        //     return (News);
            
-        }
+        //}
 
 
 

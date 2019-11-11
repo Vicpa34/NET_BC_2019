@@ -21,11 +21,43 @@ namespace NewsPortal.Controllers
         }
         public IActionResult Index()
         {
-            //var lastNews = _news.Where();
+            IEnumerable <News> news =_news.GetAll();
+            news = news.OrderByDescending(n => n.CreatedOn);
+                news = news.Take(6);
+            
             ViewData["Message"] = "Your application description page.";
-            return View();
+
+            var model = new IndexViewModel();
+            model.news = news;
+            return View (model);
         }
 
+        public IActionResult Topics([FromQuery]int categoryId)
+        {
+            IEnumerable<News> news = _news.GetAll();
+            news = news.OrderByDescending(n => n.CreatedOn);
+            news = news.Where(n => n.CategoryId == categoryId);
+            news = news.Take(6);
+
+
+            ViewData["Message"] = "Your application description page.";
+
+            var model = new IndexViewModel();
+            model.news = news;
+            model.ShowCategories = true;
+            model.topics = _topics.GetAll(); 
+            return View("Index", model);
+        }
+
+        public IActionResult OneNew([FromQuery]int id)
+        {
+            var model = new NewViewModel();
+            model.news = _news.Get(id);
+
+            return View(model);
+
+        }
+            
         
     }
 }

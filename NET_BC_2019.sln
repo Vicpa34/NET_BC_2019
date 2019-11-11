@@ -44,9 +44,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdsPortalN", "AdsPortalN\Ad
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdsPortal", "AdsPortal\AdsPortal.csproj", "{003FF7C3-0226-485E-B3E3-58898AB913FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortalLogic", "NewsPortalLogic\NewsPortalLogic.csproj", "{3724ADE6-197D-4D24-8FC5-413A599222D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsPortalLogic", "NewsPortalLogic\NewsPortalLogic.csproj", "{3724ADE6-197D-4D24-8FC5-413A599222D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal", "NewsPortal\NewsPortal.csproj", "{60A3BAAE-A221-40F8-8B4B-4B179115FBF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsPortal", "NewsPortal\NewsPortal.csproj", "{60A3BAAE-A221-40F8-8B4B-4B179115FBF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1361C879-D818-4C11-B442-F5A1CBD45A4D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Documents\Visual Studio 2019\SQLQuery10.sql = ..\..\Documents\Visual Studio 2019\SQLQuery10.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
